@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+label.navbar-brand {
+    margin: 0;
+}
+
+.chat-area {
+    display: none;
+}
+
+.messages {
+    max-height: 45vh;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+/* .messages::-webkit-scrollbar-button {
+  display: none;
+}
+
+.messages::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+.messages::-webkit-scrollbar:hover {
+  width: 5px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgb(153, 153, 153);
+} */
+
+/* https://codepen.io/tholman/pen/tldwm */
+/* .messages::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.messages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #999999;
+} */
+
+.message {
+    word-wrap: break-word;
+}
+
+.message:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+.message > *,
+.message pre,
+.message p {
+    margin: 0;
+}
+
+.users {
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.user {
+    white-space: pre-wrap;
+}
