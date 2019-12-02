@@ -35,18 +35,11 @@ const rules = {
     },
     strong: {
         ...Markdown.defaultRules.strong,
-        order: currentOrder++,
-        match(source) {
-            return /^\*\*([\s\S]+?)\*\*/.exec(source);
-        },
-        parse(capture, parse, state) {
-            return {
-                content: parse(capture[1], state),
-            };
-        },
+        order: currentOrder,
     },
     underline: {
-        order: currentOrder++,
+        ...Markdown.defaultRules.u,
+        order: currentOrder,
         match(source) {
             return /^__([\s\S]+?)__/.exec(source);
         },
@@ -62,20 +55,8 @@ const rules = {
         },
     },
     em: {
+        ...Markdown.defaultRules.em,
         order: currentOrder++,
-        match(source) {
-            return /^(\*|_)([\s\S]+?)\1/.exec(source);
-        },
-        parse(capture, parse, state) {
-            return {
-                content: parse(capture[2], state),
-            };
-        },
-        react(node, output, state) {
-            return Markdown.reactElement('em', state.key, {
-                children: output(node.content, state),
-            });
-        },
     },
     codeBlock: {
         order: currentOrder++,
@@ -120,18 +101,8 @@ const rules = {
         },
     },
     text: {
+        ...Markdown.defaultRules.text,
         order: currentOrder++,
-        match(source) {
-            return /^[\s\S]+/.exec(source);
-        },
-        parse(capture) {
-            return {
-                content: capture[0],
-            };
-        },
-        react(node) {
-            return node.content;
-        },
     },
 };
 
