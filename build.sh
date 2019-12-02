@@ -1,3 +1,4 @@
+rm -rf build
 cd client
 rm -rf build
 npm install
