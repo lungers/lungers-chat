@@ -123,7 +123,7 @@ export default class Chat extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-3 border-right border-secondary d-none d-md-block">
+                    <div className="mb-3 col-md-3 md-border-right border-secondary d-md-block">
                         <h3 className="mb-3">Online Users</h3>
                         <ul className="list-group users">
                             {this.state.users.map((user, index) => (
